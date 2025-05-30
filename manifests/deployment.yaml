@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hello
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hello
@@ -16,22 +16,9 @@ spec:
     spec:
       containers:
       - name: hello
-        image: gcr.io/[TU-PROYECTO]/hello-world:latest
+        image: ghcr.io/optaresolutions/hello-go:v0.0.1
         ports:
         - containerPort: 80
-        # Liveness & readiness (opcional)
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 10
-          periodSeconds: 20
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 10
 ---
 apiVersion: v1
 kind: Service
