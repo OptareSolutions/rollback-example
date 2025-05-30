@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello
-        image: ghcr.io/optaresolutions/hello-go:v0.0.1
+        image: ghcr.io/optaresolutions/hello-go:v0.0.2
         ports:
         - containerPort: 8080
